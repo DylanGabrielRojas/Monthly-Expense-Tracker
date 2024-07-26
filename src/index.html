@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Monthly Expense Tracker</title>
+        <link rel="stylesheet" href="./css/main.css" />
+
+        <script type="text/javascript" src="./js/main.js" async></script>
+    </head>
+    <body>
+        <header>Monthly Expense Tracker</header>
+        <div class="container--2col">
+            <aside class="container container--center">
+                <section class="container aside_container">
+                    <h1>Budget</h1>
+                    <input
+                        type="number"
+                        placeholder="Enter budget"
+                        class="aside_input"
+                        id="budget_input"
+                    />
+                    <button id="budget_btn" class="aside_input aside_input--btn">Add</button>
+                </section>
+                <section class="container aside_container">
+                    <h1>Expenses</h1>
+                    <input
+                        type="text"
+                        placeholder="Enter expense title"
+                        class="aside_input"
+                        id="expense_input_title"
+                    />
+                    <input
+                        type="number"
+                        placeholder="Enter amount"
+                        class="aside_input"
+                        id="expense_input_amount"
+                    />
+                    <input
+                        type="date"
+                        class="aside_input"
+                        id="expense_input_date"
+                    />
+                    <select class="aside_input" id="select_tags"></select>
+                    <button id="expense_btn" class="aside_input aside_input--btn">Add</button>
+                </section>
+                <section class="container aside_container">
+                    <h1>Tags</h1>
+                    <input
+                        type="text"
+                        placeholder="Enter tag title"
+                        class="aside_input"
+                        id="tag_input"
+                    />
+                    <div class="container_btn">
+                        <button
+                            id="tag_btn--add"
+                            class="aside_input aside_input--small aside_input--btn"
+                        >
+                            Add
+                        </button>
+                        <button
+                            id="tag_btn--del"
+                            class="aside_input aside_input--small aside_input--btn"
+                        >
+                            Delete
+                        </button>
+                    </div>
+                </section>
+            </aside>
+            <main class="container">
+                <section class="container main_state">
+                    <h1 id="budget_state"> We are inside the budget! c:</h2>
+                </section>
+                <section class="container main_totals">
+                    <span id="Total_budget">Total Budget: <b></b></span>
+                    <span id="Total_expense">Total Expense: <b></b></span>
+                    <span id="Budget_left">Budget Left: <b></b></span>
+                </section>
+                <section class="container main_expenses">
+                    <h1 class="expense-history_title">Expense History</h1>
+                    <table id="Expense_list" frame="hsides" rules="rows">
+                        <thead>
+                            <tr>
+                                <th>Date:</th>
+                                <th>Title:</th>
+                                <th>Amount:</th>
+                                <th>Tag:</th>
+                                <th>Action:</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
