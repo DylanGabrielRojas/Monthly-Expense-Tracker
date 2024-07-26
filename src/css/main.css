@@ -76,6 +76,7 @@ main {
     padding: 0.2em;
     box-sizing: border-box;
     font-size: 1.5em;
+    background-color: #fef9ff;
 }
 
 .aside_input--small {

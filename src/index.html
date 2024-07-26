@@ -4,8 +4,9 @@
         <meta charset="UTF-8" />
         <title>Monthly Expense Tracker</title>
         <link rel="stylesheet" href="./css/main.css" />
-
-        <script type="text/javascript" src="./js/main.js" async></script>
+        <script src="./env/api.js"></script>
+        <script src="./data/currencies.js"></script>
+        <script src="./js/main.js" async></script>
     </head>
     <body>
         <header>Monthly Expense Tracker</header>
@@ -66,15 +67,17 @@
                         </button>
                     </div>
                 </section>
-
-
                 <section class="container aside_container">
                     <h1>Currency</h1>
                     <select class="aside_input" id="select_currency">
-                        <option>Dolar</option>
-                        <option>Colón</option>
                     </select>
                     <button id="currency_btn" class="aside_input aside_input--btn">Change</button>
+                </section>
+                <section class="container aside_container">
+                    <h1>Import/Export Data</h1>
+                    <label>Import file:</label>
+                    <input type="file" id="import_file" class="aside_input"/>
+                    <button id="export_btn" class="aside_input aside_input--btn">Export</button>
                 </section>
             </aside>
             <main class="container">
