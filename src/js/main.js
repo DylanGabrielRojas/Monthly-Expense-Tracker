@@ -55,11 +55,11 @@ function addUpdateRow(expense){
     action.innerHTML = `<button
                         class='btn_expense btn_expense--chg'
                         onclick="updateRow(${expense.position})"
-                    >Update</button>`;
+                    ><i class="fa fa-check" aria-hidden="true"></i></button>`;
     action.innerHTML += `<button
                         class='btn_expense btn_expense--del'
                         onclick="hideUpdateRow(${expense.position})"
-                    >Cancel</button>`;
+                    ><i class="fa fa-ban" aria-hidden="true"></i></button>`;
 
     row.appendChild(date);
     row.appendChild(title);
@@ -94,11 +94,11 @@ function updateExpenses(expenses) {
         action.innerHTML = `<button
                             class='btn_expense btn_expense--del'
                             onclick="deleteRow(${expense.position})"
-                        >Delete</button>`;
+                        ><i class="fa fa-trash" aria-hidden="true"></i></button>`;
         action.innerHTML += `<button
                             class='btn_expense btn_expense--chg'
                             onclick="showUpdateRow(${expense.position})"
-                        >Edit</button>`;
+                        ><i class="fa fa-pencil" aria-hidden="true"></i></button>`;
 
         row.appendChild(date);
         row.appendChild(title);

@@ -17,6 +17,11 @@ h1 {
     margin-bottom: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 header {
     width: 100%;
     text-align: center;
@@ -39,7 +44,8 @@ header {
     background-color: #fef9ff;
     border: 1px solid black;
     border-radius: 1.2em;
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;}
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
 
 .container--center {
     align-items: center;
@@ -125,6 +131,14 @@ main {
     width: 95%;
     padding: 0.4em;
 }
+
+.main_summary {
+    width: 95%;
+    padding: 0.4em;
+    margin-top: 0.4em;
+    background-color: #d4f4dd;
+}
+
 .expense-history_title {
     padding: 0.4em;
 }
@@ -144,7 +158,6 @@ main {
 }
 
 .expense_action {
-    width: 20%;
     padding: 0;
     margin: 0;
 }
@@ -177,3 +190,33 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+
+
+@media screen and (max-width: 900px) {
+    .container--2col {
+        display: flex;
+        columns: 1;
+        flex-direction: column;
+    }
+    main {
+        width: 95%;
+    }
+
+    aside {
+        width: 95%;
+    }
+
+    .main_totals {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .expense_action{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn_expense {
+        width: 100%;
+    }
+  }
