@@ -229,18 +229,32 @@ document.getElementById("tag_btn--add").addEventListener("click", () => {
     localStorage.setItem("tags", JSON.stringify(tags));
 });
 
+// check if there is still expenses with the tag
+function checkTag (tag) {
+    let aux = false;
+    JSON.parse(localStorage.getItem('expenses')).forEach(expense => {
+        if (expense.tag == tag) {
+            aux = true;
+        }
+    });
+    return aux;
+}
+
 // Delete tags
 document.getElementById("tag_btn--del").addEventListener("click", () => {
     if (document.getElementById("tag_input").value == "") return;
     let tags = getTags();
-
+    if (checkTag(document.getElementById("tag_input").value)){
+        alert('There is still expenses with this tag!!!');
+        return;
+    }
     if (tags.indexOf(document.getElementById("tag_input").value) > -1) {
-        console.log(tags.indexOf(document.getElementById("tag_input").value));
         tags.splice(
             tags.indexOf(document.getElementById("tag_input").value),
             1
         );
         updateTags(tags);
+        localStorage.setItem("tags", JSON.stringify(tags));
     }
 });
 
