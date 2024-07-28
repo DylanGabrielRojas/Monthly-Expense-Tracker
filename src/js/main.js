@@ -204,8 +204,8 @@ window.onload = () => {
 
 // Changes the total budget
 document.getElementById("budget_btn").addEventListener("click", () => {
-    if (document.getElementById("budget_input").value == ''){
-        alert(`the budget can't be empty`);
+    if (Number(document.getElementById("budget_input").value) < 0 || document.getElementById('budget_input').value == ''){
+        alert(`the budget can't be empty or negative`);
         return;
     }
     localStorage.setItem(
@@ -265,9 +265,13 @@ document.getElementById("expense_btn").addEventListener("click", () => {
         document.getElementById("expense_input_title").value == "" ||
         document.getElementById("expense_input_amount").value == "" ||
         document.getElementById("select_tags").value == "" ||
-        document.getElementById("expense_input_date").value == ""
-    )
+        document.getElementById("expense_input_date").value == "" ||
+        Number(document.getElementById("expense_input_amount").value) < 0
+    ) {
+        alert('There cannot be empty spaces nor the amount be negative')
         return;
+
+    }
     let expenses = getExpenses();
     expenses.push({
         title: document.getElementById("expense_input_title").value,
