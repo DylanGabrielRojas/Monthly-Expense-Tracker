@@ -1,10 +1,39 @@
+:root,
+    :root.light {
+    --bg-color: #6b9ac4;
+    --text-color: black;
+    --text-color-alt: white;
+    --btn-color: #d4f4dd;
+    --btn-color-red: #ce505f;
+    --container-color: #fef9ff;
+    --big-container-color: #fcebff; 
+    --input-color: #fef9ff;
+    --border-color: black;
+    }
+    :root.dark {
+    --bg-color: #212529;
+    --text-color: white;
+    --text-color-alt: black;
+    --btn-color: #038929;
+    --btn-color-red: #c7091f;
+    --container-color: #212529;
+    --big-container-color: #04335c; 
+    --input-color: #212529;
+    --border-color: white;
+    }
+
+
+::placeholder { /* Most modern browsers support this now. */
+    color: var(--text-color);
+ }
 html {
     height: 100%;
     width: 100%;
 }
 
 body {
-    background-color: #6b9ac4;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     height: 100%;
     width: 100%;
     margin: 0;
@@ -41,8 +70,8 @@ header {
 
 .container {
     margin: 0.8em;
-    background-color: #fef9ff;
-    border: 1px solid black;
+    background-color: var(--container-color);
+    border: 1px solid var(--border-color);
     border-radius: 1.2em;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
@@ -51,8 +80,19 @@ header {
     align-items: center;
 }
 
+#style-mode-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    border-top: 1px solid var(--border-color);
+    padding: 0.2em;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    background-color: var(--btn-color);
+}
 aside {
-    background-color: #FCEBFF !important;
+    background-color: var(--big-container-color) !important;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -61,7 +101,7 @@ aside {
 }
 
 main {
-    background-color: #FCEBFF !important;
+    background-color: var(--big-container-color) !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -69,7 +109,7 @@ main {
 }
 
 .aside_container {
-    background-color: #6B9AC4;
+    background-color:var(--bg-color);
     text-align: center;
     width: 90%;
     overflow: hidden;
@@ -78,11 +118,12 @@ main {
 .aside_input {
     width: 100%;
     border: 0;
-    border-top: 1px solid black;
+    border-top: 1px solid var(--border-color);
     padding: 0.2em;
     box-sizing: border-box;
     font-size: 1.5em;
-    background-color: #fef9ff;
+    background-color: var(--input-color);
+    color: var(--text-color);
 }
 
 .aside_input--small {
@@ -91,11 +132,12 @@ main {
 
 #tag_btn--del {
     border-left: 1px solid black;
-    background-color: #ce505f;
+    background-color: var(--btn-color-red);
 }
 
 .aside_input--btn {
-    background-color: #d4f4dd;
+    background-color: var(--btn-color);
+    color: black;
 }
 
 .container_btn {
@@ -136,7 +178,8 @@ main {
     width: 95%;
     padding: 0.4em;
     margin-top: 0.4em;
-    background-color: #d4f4dd;
+    color: black;
+    background-color: var(--btn-color);
 }
 
 .expense-history_title {
@@ -154,7 +197,7 @@ main {
 }
 
 #Expense_list tr {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .expense_action {
@@ -165,7 +208,7 @@ main {
 .btn_expense {
     border-radius: 0;
     border: 0;
-    border-left: 1px solid black;
+    border-left: 1px solid var(--border-color);
     width: 50%;
     height: 100%;
     margin: 0;
@@ -173,11 +216,11 @@ main {
 }
 
 .btn_expense--chg {
-    background-color: #d4f4dd;
+    background-color: var(--btn-color);
 }
 
 .btn_expense--del {
-    background-color: #ce505f;
+    background-color: var(--btn-color-red);
 }
 
 input::-webkit-outer-spin-button,

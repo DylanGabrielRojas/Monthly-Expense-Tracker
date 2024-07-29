@@ -245,7 +245,7 @@ document.getElementById("tag_btn--del").addEventListener("click", () => {
     if (document.getElementById("tag_input").value == "") return;
     let tags = getTags();
     if (checkTag(document.getElementById("tag_input").value)){
-        alert('There is still expenses with this tag!!!');
+        alert('There are still expenses with this tag!!!');
         return;
     }
     if (tags.indexOf(document.getElementById("tag_input").value) > -1) {
@@ -364,6 +364,7 @@ document.getElementById('export_btn').addEventListener('click', () => {
     URL.revokeObjectURL(jsonObjectUrl);
 });
 
+//import data‹
 document.getElementById('import_file').addEventListener('change', () => {
     if (document.getElementById('import_file').files.length > 0) {
         var reader = new FileReader();
@@ -381,4 +382,11 @@ document.getElementById('import_file').addEventListener('change', () => {
           
           reader.readAsText(blob);
     }
+});
+
+//change theme
+document.getElementById("style-mode-btn").addEventListener('click', () => {
+    document.documentElement.className == 'dark' ?
+    document.documentElement.className = 'light' :
+    document.documentElement.className = 'dark';
 });
